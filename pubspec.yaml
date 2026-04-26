@@ -1,5 +1,5 @@
 name: currency_converter
-description: "A new Flutter project."
+description: ""
 publish_to: 'none'
 version: 0.1.0
 
@@ -9,11 +9,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  get_it: ^8.3.0
+  google_fonts: ^6.3.0
+  hydrated_bloc: ^11.0.0
+  injectable: ^2.5.1
+  injectable_generator: ^2.7.0
+  very_good_analysis: ^7.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  build_runner: ^2.4.15
 
 flutter:
   uses-material-design: true
+  generate: true
