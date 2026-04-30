@@ -1,20 +1,16 @@
+import 'package:currency_converter/app/view/app.dart';
+import 'package:currency_converter/di.dart';
 import 'package:flutter/material.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:path_provider/path_provider.dart';
 
-void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  HydratedBloc.storage = await HydratedStorage.build(
+    storageDirectory: HydratedStorageDirectory(
+      (await getApplicationSupportDirectory()).path,
+    ),
+  );
+  await configureDependencies();
+  runApp(App());
 }

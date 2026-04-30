@@ -8,6 +8,20 @@ abstract class AppTheme {
     typography: Typography.material2021(),
     colorScheme: AppColorScheme.light,
     textTheme: AppTextTheme.light,
+    inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide.none,
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide.none,
+      ),
+      hintStyle: AppTextTheme.light.bodyLarge,
+      contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 13),
+      filled: true,
+      fillColor: AppColorScheme.light.surfaceContainer,
+    ),
   );
 
   static ThemeData dark = ThemeData(
@@ -15,5 +29,19 @@ abstract class AppTheme {
     typography: Typography.material2021(),
     colorScheme: AppColorScheme.dark,
     textTheme: AppTextTheme.dark,
+    inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide.none,
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide.none,
+      ),
+      hintStyle: AppTextTheme.dark.bodyLarge,
+      contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 13),
+      filled: true,
+      fillColor: AppColorScheme.dark.surfaceContainer,
+    ),
   );
 }

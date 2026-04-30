@@ -7,13 +7,17 @@ environment:
   sdk: ^3.6.2
 
 dependencies:
+  auto_route: ^10.1.0+1
+  auto_route_generator: ^10.0.1
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.1
   get_it: ^8.3.0
   google_fonts: ^6.3.0
   hydrated_bloc: ^11.0.0
   injectable: ^2.5.1
   injectable_generator: ^2.7.0
+  path_provider: ^2.1.5
   very_good_analysis: ^7.0.0
 
 dev_dependencies:
