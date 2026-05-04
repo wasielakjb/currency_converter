@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:currency_converter/app/router/app_router.gr.dart';
+import 'package:currency_converter/di.dart';
+import 'package:currency_converter/screens/home/routing/home_routes.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton
@@ -9,11 +10,5 @@ class AppRouter extends RootStackRouter {
   RouteType get defaultRouteType => const RouteType.adaptive();
 
   @override
-  List<AutoRoute> get routes => [
-        AutoRoute(
-          path: '/',
-          initial: true,
-          page: HomeRoute.page,
-        ),
-      ];
+  List<AutoRoute> get routes => inject<HomeRoutes>().routes;
 }
