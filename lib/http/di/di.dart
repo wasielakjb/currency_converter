@@ -7,6 +7,5 @@ const ExchangerateHttpClient = 'ExchangerateHttpClient';
 void setupInterceptors() {
   inject<Dio>(instanceName: ExchangerateHttpClient)
       .interceptors
-      .add(AuthInterceptor(key: 'b2448ba655957bd0a9acc362'));
-      //b2448ba655957bd0a9acc362 YOUR_API_KEY
+      .add(AuthInterceptor(key: 'YOUR_API_KEY'));
 }
