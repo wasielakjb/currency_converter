@@ -55,9 +55,14 @@ class HomeCubit extends Cubit<HomeState> {
     emit(state.copyWith(pending: true));
     final base = formGroup.controlVal<SupportedCurrency>('from')!;
     final target = formGroup.controlVal<SupportedCurrency>('to')!;
+    final ammount = formGroup.controlVal<double>('from_amount') ?? 0;
+    if (ammount == 0) {
+      formGroup.control('to_amount').reset();
+      emit(state.copyWith(pending: false));
+      return;
+    }
     final response = await repository.getPairConversion(base, target);
-    final value = formGroup.controlVal<double>('from_amount') ?? 0 * response;
-    formGroup.control('to_amount').patchValue(value);
+    formGroup.control('to_amount').patchValue(ammount * response);
     emit(state.copyWith(pending: false));
   }
 }
