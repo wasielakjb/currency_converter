@@ -13,8 +13,11 @@ class ExchangerateRepositoryImpl implements ExchangerateRepository {
   final ExchangerateRemoteDataSource remoteDS;
 
   @override
-  Future<double> getPairConversion(String base, String target) {
-    return remoteDS.fetchPairConversion(base, target);
+  Future<double> getPairConversion(
+    SupportedCurrency base,
+    SupportedCurrency target,
+  ) {
+    return remoteDS.fetchPairConversion(base.code, target.code);
   }
 
   @override

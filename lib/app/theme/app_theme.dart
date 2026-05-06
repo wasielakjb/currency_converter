@@ -1,6 +1,7 @@
 import 'package:currency_converter/app/theme/app_color_scheme.dart';
 import 'package:currency_converter/app/theme/app_text_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 abstract class AppTheme {
   static ThemeData light = ThemeData(
@@ -22,6 +23,7 @@ abstract class AppTheme {
       filled: true,
       fillColor: AppColorScheme.light.surfaceContainer,
     ),
+    extensions: [lightSkeletonizerConfig],
   );
 
   static ThemeData dark = ThemeData(
@@ -42,6 +44,22 @@ abstract class AppTheme {
       contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 13),
       filled: true,
       fillColor: AppColorScheme.dark.surfaceContainer,
+    ),
+    extensions: [darkSkeletonizerConfig],
+  );
+
+  static SkeletonizerConfigData lightSkeletonizerConfig =
+      SkeletonizerConfigData(
+    effect: ShimmerEffect(
+      baseColor: AppColorScheme.light.surfaceContainerHigh,
+      highlightColor: AppColorScheme.light.surfaceContainerHighest,
+    ),
+  );
+
+  static SkeletonizerConfigData darkSkeletonizerConfig = SkeletonizerConfigData(
+    effect: ShimmerEffect(
+      baseColor: AppColorScheme.dark.surfaceContainerHigh,
+      highlightColor: AppColorScheme.dark.surfaceContainerHighest,
     ),
   );
 }

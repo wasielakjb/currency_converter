@@ -7,7 +7,7 @@ class NetworkSupportedCurrency {
   factory NetworkSupportedCurrency.fromList(List<dynamic> list) =>
       NetworkSupportedCurrency(
         code: list.first as String,
-        name: list.first as String,
+        name: list.last as String,
       );
 
   final String code;
