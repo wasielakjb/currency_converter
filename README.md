@@ -21,7 +21,7 @@ The app supports bidirectional conversion, allowing users to enter either the so
 
 ## Screenshots
 
-<p align="center">
+<p align="left">
   <img src="assets/home.png" width="250" alt="Home Screen">
 </p>
 
