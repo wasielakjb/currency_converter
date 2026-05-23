@@ -21,9 +21,7 @@ The app supports bidirectional conversion, allowing users to enter either the so
 
 ## Screenshots
 
-```md
 ![Home Screen](assets/home.png)
-```
 
 ---
 
