@@ -10,18 +10,15 @@ abstract class AppTheme {
     colorScheme: AppColorScheme.light,
     textTheme: AppTextTheme.light,
     inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide.none,
-      ),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
       enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColorScheme.light.outlineVariant),
         borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide.none,
       ),
       hintStyle: AppTextTheme.light.bodyLarge,
-      contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 13),
+      contentPadding: const EdgeInsets.symmetric(vertical: 12.5, horizontal: 13),
       filled: true,
-      fillColor: AppColorScheme.light.surfaceContainer,
+      fillColor: AppColorScheme.light.surface,
     ),
     extensions: [lightSkeletonizerConfig],
   );

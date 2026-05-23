@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-class CurrencyFormSelector extends StatelessWidget {
-  const CurrencyFormSelector({
+class CurrencyFormField extends StatelessWidget {
+  const CurrencyFormField({
     required this.formControlName,
     super.key,
   });
@@ -27,19 +27,20 @@ class CurrencyFormSelector extends StatelessWidget {
             field.didChange(res);
           }
         },
-        borderRadius: BorderRadius.circular(8),
-        child: Container(
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(field.value?.code ?? '', style: context.titleLarge),
-              const Icon(Icons.keyboard_arrow_down_rounded),
-            ],
-          ),
+        child: Row(
+          spacing: 8,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Expanded(
+              child: Text(
+                field.value?.name ?? '',
+                style: context.bodyLarge,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.end,
+              ),
+            ),
+            const Icon(Icons.expand_more, size: 18),
+          ],
         ),
       ),
     );
